@@ -135,3 +135,10 @@ resource "aws_instance" "HOST3A" {
   private_ip = "${cidrhost(aws_subnet.subnet3.cidr_block,5)}"
   key_name= "ACITKEY"
 }
+resource "aws_instance" "HOST3B" {
+  ami         = "ami-087c2c50437d0b80d"
+  instance_type = "t2.micro"
+  subnet_id = "${aws_subnet.subnet3.id}"
+  private_ip = "${cidrhost(aws_subnet.subnet3.cidr_block,6)}"
+  key_name= "ACITKEY"
+}
